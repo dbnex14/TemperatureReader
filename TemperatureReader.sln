@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureReader", "TemperatureReader\TemperatureReader.csproj", "{35D0464A-4CA0-474A-B47A-64412B58B6AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureReaderTests", "TemperatureReaderTests\TemperatureReaderTests.csproj", "{B4E99D9B-619B-40C3-A27F-449AE702BB3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{35D0464A-4CA0-474A-B47A-64412B58B6AA}.Debug|x86.Build.0 = Debug|x86
 		{35D0464A-4CA0-474A-B47A-64412B58B6AA}.Release|x86.ActiveCfg = Release|x86
 		{35D0464A-4CA0-474A-B47A-64412B58B6AA}.Release|x86.Build.0 = Release|x86
+		{B4E99D9B-619B-40C3-A27F-449AE702BB3F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4E99D9B-619B-40C3-A27F-449AE702BB3F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4E99D9B-619B-40C3-A27F-449AE702BB3F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4E99D9B-619B-40C3-A27F-449AE702BB3F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
