@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// TODO [IF TIME] Rather than delegating to Main, create PrintManager and delegate to it.
+// TODO [IF TIME] More unit tests
 namespace TemperatureReader
 {
     /*
