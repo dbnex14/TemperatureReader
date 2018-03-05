@@ -35,12 +35,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="interfaces\ISensor.cs" />
-    <Compile Include="Sensor.cs" />
     <Compile Include="interfaces\IThermometer.cs" />
     <Compile Include="implementations\TemperatureChangeEventArgs.cs" />
     <Compile Include="implementations\Thermometer.cs" />
     <Compile Include="interfaces\IThermometerReader.cs" />
     <Compile Include="implementations\ThermometerReader.cs" />
+    <Compile Include="implementations\Sensor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="interfaces\" />
