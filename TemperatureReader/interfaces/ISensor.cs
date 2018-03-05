@@ -5,6 +5,6 @@ namespace TemperatureReader
 {
     public interface ISensor
     {
-        IEnumerable<double> Read(bool doSleep);
+        IEnumerable<double> Read(bool doSleep = false);
     }
 }
