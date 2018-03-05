@@ -25,7 +25,7 @@ namespace TemperatureReader
             GC.SuppressFinalize(this);
         }
 
-        public IEnumerable<double> Read(bool doSleep = false)
+        public IEnumerable<double> Read(bool doSleep = true)
         {
             foreach (var read in sensorReader)
             {
