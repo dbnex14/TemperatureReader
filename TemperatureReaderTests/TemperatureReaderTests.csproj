@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="SensorTests.cs" />
     <Compile Include="ThermometerTests.cs" />
+    <Compile Include="TemperatureReaderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
