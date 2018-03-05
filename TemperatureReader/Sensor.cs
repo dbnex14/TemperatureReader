@@ -19,12 +19,6 @@ namespace TemperatureReader
 
         public Sensor() {}
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
         public IEnumerable<double> Read(bool doSleep = true)
         {
             foreach (var read in sensorReader)
@@ -35,6 +29,12 @@ namespace TemperatureReader
                 }
                 yield return read;
             }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected void Dispose(bool disposing)
