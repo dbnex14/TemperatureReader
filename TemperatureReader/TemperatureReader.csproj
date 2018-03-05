@@ -39,6 +39,8 @@
     <Compile Include="interfaces\IThermometer.cs" />
     <Compile Include="implementations\TemperatureChangeEventArgs.cs" />
     <Compile Include="implementations\Thermometer.cs" />
+    <Compile Include="interfaces\IThermometerReader.cs" />
+    <Compile Include="implementations\ThermometerReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="interfaces\" />
