@@ -26,7 +26,7 @@ namespace TemperatureReaderTests
         }
 
         [Test]
-        public void TestThermometerOn()
+        public void TestThermometerTemperatureChangedCalledXTimes()
         {
             // arrange
             int counter = 0;
@@ -49,7 +49,7 @@ namespace TemperatureReaderTests
             double expected = 100.0;
             double delta = 0.001;
 
-            var stubThermometer = MockRepository.GenerateStub<IThermometer>();
+            var stubThermometer = MockRepository.GenerateMock<IThermometer>();
 
             // act
             stubThermometer.Stub(t => t.TemperatureCelsius).Return(expected);
@@ -65,7 +65,7 @@ namespace TemperatureReaderTests
             double expected = 100.0;
             double delta = 0.001;
 
-            var stubThermometer = MockRepository.GenerateStub<IThermometer>();
+            var stubThermometer = MockRepository.GenerateMock<IThermometer>();
 
             // act
             stubThermometer.Stub(t => t.TemperatureFahrenheit).Return(expected);

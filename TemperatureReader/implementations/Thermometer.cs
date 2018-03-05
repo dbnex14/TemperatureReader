@@ -3,11 +3,11 @@ namespace TemperatureReader
 {
     public class Thermometer : IDisposable, IThermometer
     {
+        private bool disposed = false;
+
         private static double _FACTOR = 1.8;
         private static int _SCALE = 32;
         private static double _DELTA = 0.4;
-
-        private bool disposed = false;
         private double mTemperatureC;
 
         public event TemperatureChangedEventHandler TemperatureChanged;
