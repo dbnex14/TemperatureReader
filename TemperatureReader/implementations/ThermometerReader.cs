@@ -28,7 +28,8 @@ namespace TemperatureReader
         private const string _INCREASING = "INCREASING";
 
         private bool disposed = false;
-        private string Name { get; set; }
+
+        private Guid mId;
         private readonly IThermometer mThermometer;
         private Settings mSettings;
         private bool mTresholdReached = true;
@@ -36,13 +37,12 @@ namespace TemperatureReader
 
         public delegate void PrinterCallback(string message);
 
-        public ThermometerReader(string name, IThermometer thermometer, Settings? settings, PrinterCallback callback)
+        public ThermometerReader(IThermometer thermometer, Settings? settings, PrinterCallback callback)
         {
-            Name = name;
+            mId = Guid.NewGuid();  //reader id
             mThermometer = thermometer;
             mSettings = settings.GetValueOrDefault();
             mPrinterCallback = callback;
-
 
             if (settings.HasValue && mSettings.threshold != null && mSettings.threshold.Count > 0)
             {
@@ -56,8 +56,7 @@ namespace TemperatureReader
 
         public void OnTemperatureChange(object sender, TemperatureChangeEventArgs args)
         {
-            mPrinterCallback(string.Format(_READING_MESSAGE, Name, args.NewTemperature));
-            //Console.WriteLine(_READING_MESSAGE, Name, args.NewTemperature);
+            mPrinterCallback(string.Format(_READING_MESSAGE, mId, args.NewTemperature));
         }
 
         public void OnTemperatureThresholdChange(object sender, TemperatureChangeEventArgs args)
@@ -113,12 +112,8 @@ namespace TemperatureReader
 
         private void Print(string bearing, double reading)
         {
-            //Console.WriteLine(_READING_DIRECTIONAL_THRESHOLD_MESSAGE
-                              //, Name
-                              //, bearing
-                              //, reading);
             mPrinterCallback(string.Format(_READING_DIRECTIONAL_THRESHOLD_MESSAGE
-                              , Name
+                              , mId
                               , bearing
                               , reading));
         }

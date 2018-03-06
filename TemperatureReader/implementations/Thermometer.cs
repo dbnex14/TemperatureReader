@@ -5,15 +5,19 @@ namespace TemperatureReader
     {
         private bool disposed = false;
 
-        private static double _FACTOR = 1.8;
-        private static int _SCALE = 32;
-        private static double _DELTA = 0.4;
+        private const double _FACTOR = 1.8;
+        private const int _SCALE = 32;
+        private const double _DELTA = 0.4;
         private double mTemperatureC;
+        private Guid mId;
 
         public event TemperatureChangedEventHandler TemperatureChanged;
         public event TemperatureChangedEventHandler TemperatureThresholdChanged;
 
-        public Thermometer() { }
+        public Thermometer() 
+        {
+            mId = Guid.NewGuid();
+        }
 
         public double TemperatureCelsius
         {

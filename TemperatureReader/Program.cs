@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 // TODO [IF TIME] Rather than delegating to Main, create PrintManager and delegate to it.
 // TODO [IF TIME] More unit tests
+// TODO [IF TIME] ThermometerReader should set its own Name (Guid or ID) rather than being passed one
 namespace TemperatureReader
 {
     /*
      * Dino Buljubasic
-     * EncoreFX
+     * 
      */
     class MainClass
     {
@@ -23,13 +24,11 @@ namespace TemperatureReader
             using (Sensor sensor = new Sensor())
             using (Thermometer thermometer = new Thermometer())
             using (ThermometerReader reader = new ThermometerReader(
-                "R1"
-                , thermometer
+                thermometer
                 , null
                 , Print))
             using (ThermometerReader readerWithSettings = new ThermometerReader(
-                "RS1"
-                , thermometer
+                thermometer
                 , new Settings(new List<double>() { 0.0, 100.0 }, Direction.Either, 0.5)
                 , Print))
             {
